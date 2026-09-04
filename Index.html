@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Velvet Auto Detailing | Premium Car Detailing</title>
+  <meta name="description" content="Premium mobile car detailing. Interior deep cleans, exterior detailing and paint enhancement. Book Velvet Auto Detailing today.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0b0c;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11,11,12,0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #242426;
+    }
+
+    nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: #c9a96e;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      color: #c9c9c9;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.55)),
+        radial-gradient(circle at 75% 40%, #46391f, #111 45%, #080808 75%);
+    }
+
+    .hero-content {
+      max-width: 720px;
+      padding: 80px 0;
+    }
+
+    .eyebrow {
+      color: #c9a96e;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(46px, 9vw, 86px);
+      line-height: .95;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 580px;
+      color: #c8c8c8;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: .2s;
+    }
+
+    .btn-primary {
+      background: #c9a96e;
+      color: #0b0b0c;
+    }
+
+    .btn-secondary {
+      border: 1px solid #555;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-label {
+      color: #c9a96e;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 6vw, 54px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      color: #aaa;
+      max-width: 620px;
+      margin-bottom: 45px;
+    }
+
+    .services {
+      background: #111113;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      border: 1px solid #29292c;
+      padding: 30px;
+      background: #151517;
+    }
+
+    .service-number {
+      color: #c9a96e;
+      font-size: 13px;
+      margin-bottom: 40px;
+    }
+
+    .service h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      color: #999;
+      font-size: 14px;
+    }
+
+    .showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .showcase-card {
+      min-height: 330px;
+      padding: 30px;
+      display: flex;
+      align-items: flex-end;
+      background:
+        linear-gradient(0deg, rgba(0,0,0,.8), transparent),
+        linear-gradient(135deg, #292929, #74613b);
+      border: 1px solid #29292c;
+    }
+
+    .showcase-card:nth-child(2) {
+      background:
+        linear-gradient(0deg, rgba(0,0,0,.8), transparent),
+        linear-gradient(135deg, #151515, #51432c);
+    }
+
+    .showcase-card h3 {
+      font-size: 28px;
+    }
+
+    .reviews {
+      background: #111113;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .review {
+      padding: 30px;
+      background: #151517;
+      border: 1px solid #29292c;
+    }
+
+    .stars {
+      color: #c9a96e;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .review p {
+      color: #ccc;
+      margin-bottom: 25px;
+    }
+
+    .review strong {
+      font-size: 14px;
+    }
+
+    .cta {
+      text-align: center;
+      background: #c9a96e;
+      color: #0b0b0c;
+    }
+
+    .cta .section-label {
+      color: #0b0b0c;
+    }
+
+    .cta h2 {
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .cta p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .cta .btn-primary {
+      background: #0b0b0c;
+      color: white;
+    }
+
+    footer {
+      padding: 35px 0;
+      background: #080808;
+      color: #777;
+      font-size: 13px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 750px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+
+      .service-grid,
+      .review-grid,
+      .showcase {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">VELVET <span>AUTO</span></a>
+
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#work">Our Work</a>
+        <a href="#reviews">Reviews</a>
+      </div>
+
+      <a href="#book" class="btn btn-primary">Book Now</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="eyebrow">Premium Mobile Detailing</div>
+
+        <h1>Your car.<br>Restored.</h1>
+
+        <p>
+          Professional mobile car detailing that brings back the finish,
+          freshness and feeling of a car you actually love driving.
+        </p>
+
+        <div class="buttons">
+          <a href="#book" class="btn btn-primary">Book a Detail</a>
+          <a href="#services" class="btn btn-secondary">View Services</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="services" id="services">
+    <div class="container">
+
+      <div class="section-label">What We Do</div>
+
+      <h2>More than a<br>car wash.</h2>
+
+      <p class="section-intro">
+        Every detail is designed to restore your vehicle's appearance,
+        protect its finish and leave the interior feeling genuinely fresh.
+      </p>
+
+      <div class="service-grid">
+
+        <div class="service">
+          <div class="service-number">01 / EXTERIOR</div>
+          <h3>Exterior Detail</h3>
+          <p>
+            Deep clean, wheels, tyres, paintwork and finishing treatment
+            for a cleaner, sharper exterior.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="service-number">02 / INTERIOR</div>
+          <h3>Interior Reset</h3>
+          <p>
+            Vacuuming, surface cleaning and deep interior treatment
+            to bring your cabin back to life.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="service-number">03 / COMPLETE</div>
+          <h3>Full Detail</h3>
+          <p>
+            The complete transformation. Interior and exterior detailing
+            for vehicles that need the full treatment.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="work">
+    <div class="container">
+
+      <div class="section-label">The Difference</div>
+
+      <h2>Clean is good.<br>Exceptional is better.</h2>
+
+      <p class="section-intro">
+        We focus on the details most people overlook — because those are
+        the details that change how your car looks and feels.
+      </p>
+
+      <div class="showcase">
+
+        <div class="showcase-card">
+          <div>
+            <div class="section-label">Exterior</div>
+            <h3>Deep gloss.<br>Clean finish.</h3>
+          </div>
+        </div>
+
+        <div class="showcase-card">
+          <div>
+            <div class="section-label">Interior</div>
+            <h3>Fresh cabin.<br>Fresh feeling.</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="reviews" id="reviews">
+    <div class="container">
+
+      <div class="section-label">Client Reviews</div>
+
+      <h2>People notice<br>the difference.</h2>
+
+      <div class="review-grid">
+
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>
+            "The car honestly looked better than when I bought it.
+            Incredible attention to detail."
+          </p>
+          <strong>— Thabo M.</strong>
+        </div>
+
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>
+            "Professional, punctual and the interior transformation
+            was crazy. Definitely using them again."
+          </p>
+          <strong>— Nicole D.</strong>
+        </div>
+
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>
+            "Finally found a detailer who actually takes their time.
+            The finish was perfect."
+          </p>
+          <strong>— Sibusiso K.</strong>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="cta" id="book">
+    <div class="container">
+
+      <div class="section-label">Ready?</div>
+
+      <h2>Give your car the treatment it deserves.</h2>
+
+      <p>
+        Mobile detailing available by appointment.
+        Get in touch and let's get your car looking right.
+      </p>
+
+      <a
+        href="https://wa.me/27820000000?text=Hi%20Velvet%20Auto%20Detailing%2C%20I'd%20like%20to%20book%20a%20detail."
+        class="btn btn-primary">
+        WhatsApp Us
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="container footer-content">
+    <div>© 2026 Velvet Auto Detailing</div>
+    <div>Mobile Detailing • By Appointment</div>
+  </div>
+</footer>
+
+</body>
+</html>
