@@ -319,6 +319,164 @@
         letter-spacing: -2px;
       }
     }
+
+body {
+  background: #050505;
+  color: #f5f5f5;
+}
+
+section {
+  position: relative;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+}
+    .hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212,175,55,.75),
+    transparent
+  );
+}
+
+    .hero-content {
+  max-width: 850px;
+  padding: 90px 0;
+}
+
+.eyebrow {
+  color: #d4af37;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+    .hero h1 {
+  background: linear-gradient(
+    135deg,
+    #ffffff 10%,
+    #ffffff 45%,
+    #d4af37 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+    .btn {
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  box-shadow: 0 12px 35px rgba(212,175,55,.18);
+}
+
+    section:not(.hero) {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+    .card,
+.service-card,
+.work-card,
+.package-card,
+.why-card {
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,.07),
+    rgba(255,255,255,.025)
+  );
+  border: 1px solid rgba(255,255,255,.09);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.28);
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+
+    .card:hover,
+.service-card:hover,
+.work-card:hover,
+.package-card:hover,
+.why-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212,175,55,.35);
+  box-shadow: 0 25px 70px rgba(0,0,0,.45);
+}
+
+    h2 {
+  letter-spacing: -1px;
+}
+
+h2 span,
+.gold {
+  color: #d4af37;
+}
+
+    #book {
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(212,175,55,.10),
+      transparent 45%
+    ),
+    #080808;
+}
+
+    #work {
+  background:
+    linear-gradient(
+      180deg,
+      #080808,
+      #0d0c09,
+      #080808
+    );
+}
+
+    #why-velvet {
+  background: #050505;
+}
+
+    @media (max-width: 600px) {
+
+  .hero {
+    min-height: 88vh;
+  }
+
+  .hero-content {
+    padding: 70px 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 15vw, 72px);
+    letter-spacing: -3px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+      section:not(.hero) {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+}
+    
   </style>
 </head>
 
