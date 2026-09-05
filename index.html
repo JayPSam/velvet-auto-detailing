@@ -70,13 +70,16 @@
     }
 
     .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.55)),
-        radial-gradient(circle at 75% 40%, #46391f, #111 45%, #080808 75%);
-    }
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 35%, rgba(184, 148, 72, 0.22), transparent 30%),
+    radial-gradient(circle at 15% 80%, rgba(184, 148, 72, 0.08), transparent 25%),
+    linear-gradient(135deg, #050505 0%, #0c0c0c 48%, #15120c 100%);
+}
 
     .hero-content {
       max-width: 720px;
