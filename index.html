@@ -508,47 +508,116 @@
   </div>
 </footer>
 
-  <section id="book" style="padding:70px 20px;background:#111;color:white;text-align:center;">
+<section id="book" style="padding:70px 20px;background:#111;color:white;text-align:center;">
   <div style="max-width:700px;margin:auto;">
-    <p style="letter-spacing:3px;color:#c9a227;font-weight:bold;">BOOK YOUR DETAIL</p>
+
+    <p style="letter-spacing:3px;color:#c9a227;font-weight:bold;">
+      BOOK YOUR DETAIL
+    </p>
 
     <h2 style="font-size:42px;margin:10px 0 20px;">
       Give Your Car The Velvet Treatment
     </h2>
 
     <p style="color:#ccc;line-height:1.7;margin-bottom:35px;">
-      Choose a package and send us your details. We'll confirm your booking on WhatsApp.
+      Choose your package below and we'll confirm your booking on WhatsApp.
     </p>
 
     <div style="display:grid;gap:18px;text-align:left;">
 
-      <div style="padding:25px;border:1px solid #333;border-radius:12px;">
-        <h3 style="margin-top:0;">Velvet Refresh</h3>
-        <p style="color:#bbb;">Exterior wash, wheels, tyres and interior refresh.</p>
-        <strong style="font-size:24px;">From R350</strong>
-      </div>
+      <label style="cursor:pointer;">
+        <input type="radio" name="package" value="Velvet Refresh - From R350"
+               style="display:none;"
+               onchange="selectPackage(this)">
+        <div class="package-card"
+             style="padding:25px;border:1px solid #333;border-radius:12px;">
+          <h3>Velvet Refresh</h3>
+          <p style="color:#bbb;">
+            Exterior wash, wheels, tyres and interior refresh.
+          </p>
+          <strong style="font-size:24px;">From R350</strong>
+        </div>
+      </label>
 
-      <div style="padding:25px;border:1px solid #c9a227;border-radius:12px;">
-        <h3 style="margin-top:0;">Velvet Signature</h3>
-        <p style="color:#bbb;">Full interior and exterior detailing for a complete transformation.</p>
-        <strong style="font-size:24px;">From R650</strong>
-      </div>
+      <label style="cursor:pointer;">
+        <input type="radio" name="package" value="Velvet Signature - From R650"
+               style="display:none;"
+               onchange="selectPackage(this)">
+        <div class="package-card"
+             style="padding:25px;border:1px solid #333;border-radius:12px;">
+          <h3>Velvet Signature</h3>
+          <p style="color:#bbb;">
+            Full interior and exterior detailing for a complete transformation.
+          </p>
+          <strong style="font-size:24px;">From R650</strong>
+        </div>
+      </label>
 
-      <div style="padding:25px;border:1px solid #333;border-radius:12px;">
-        <h3 style="margin-top:0;">Velvet Premium</h3>
-        <p style="color:#bbb;">Deep detailing, paint enhancement and premium finishing.</p>
-        <strong style="font-size:24px;">From R950</strong>
-      </div>
+      <label style="cursor:pointer;">
+        <input type="radio" name="package" value="Velvet Premium - From R950"
+               style="display:none;"
+               onchange="selectPackage(this)">
+        <div class="package-card"
+             style="padding:25px;border:1px solid #333;border-radius:12px;">
+          <h3>Velvet Premium</h3>
+          <p style="color:#bbb;">
+            Deep detailing, paint enhancement and premium finishing.
+          </p>
+          <strong style="font-size:24px;">From R950</strong>
+        </div>
+      </label>
 
     </div>
 
-    <a href="https://wa.me/27000000000?text=Hi%20Velvet%20Auto%20Detailing,%20I'd%20like%20to%20book%20a%20detail."
-       style="display:inline-block;margin-top:35px;padding:16px 28px;background:#c9a227;color:#111;text-decoration:none;font-weight:bold;border-radius:8px;">
+    <p id="selectedPackage"
+       style="margin-top:25px;color:#c9a227;font-weight:bold;">
+      Please select a package
+    </p>
+
+    <a id="whatsappButton"
+       href="#"
+       onclick="return bookWhatsApp()"
+       style="display:inline-block;margin-top:15px;padding:16px 28px;background:#c9a227;color:#111;text-decoration:none;font-weight:bold;border-radius:8px;">
       BOOK ON WHATSAPP
     </a>
 
   </div>
 </section>
 
+<script>
+function selectPackage(input) {
+  document.querySelectorAll('.package-card').forEach(function(card) {
+    card.style.borderColor = '#333';
+  });
+
+  input.nextElementSibling.style.borderColor = '#c9a227';
+
+  document.getElementById('selectedPackage').textContent =
+    'Selected: ' + input.value;
+}
+
+function bookWhatsApp() {
+  var selected = document.querySelector('input[name="package"]:checked');
+
+  if (!selected) {
+    alert('Please select a package first.');
+    return false;
+  }
+
+  var message =
+    "Hi Velvet Auto Detailing! I'd like to book the " +
+    selected.value +
+    " package.";
+
+  var url =
+    "https://wa.me/27000000000?text=" +
+    encodeURIComponent(message);
+
+  window.open(url, '_blank');
+
+  return false;
+}
+</script>
+  
 </body>
 </html>
